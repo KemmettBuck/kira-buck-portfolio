@@ -99,6 +99,10 @@ nav ul {
   align-items: center;
   text-align: center;
   margin-bottom: 2rem;
+  padding: 2rem 1rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* Header Image */
@@ -202,13 +206,6 @@ footer {
   color: white;
 }
 
-/* Responsive */
-@media (max-width: 800px) {
-  .about-container {
-    flex-direction: column;
-    align-items: center;
-  }
-
 .profile-pic-centered {
   width: 200px;
   height: 200px;
@@ -217,6 +214,14 @@ footer {
   margin-bottom: 1rem;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
+
+/* Responsive */
+@media (max-width: 800px) {
+  .about-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
 }
 
   nav ul {
