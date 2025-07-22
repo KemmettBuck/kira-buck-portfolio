@@ -15,7 +15,7 @@ body {
 }
 
 a {
-  color: #007acc;
+  color: #2a3d4a;
   text-decoration: none;
 }
 
@@ -66,7 +66,7 @@ nav a {
 }
 
 nav a:hover {
-  color: #007acc;
+  color: #577387;
 }
 
 @media (max-width: 600px) {
@@ -200,7 +200,7 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
-  background-color: #2f4d63;
+  background-color: #577387;
 }
 
 /* Footer */
@@ -213,8 +213,8 @@ footer {
 }
 
 .profile-pic-centered {
-  width: 350px;
-  height: 350px;
+  width: 22rem;
+  height: 22rem;
   border-radius: 50%;
   object-fit: cover;
   margin-bottom: 1rem;
