@@ -133,6 +133,20 @@ section {
   margin-bottom: 2rem;
 }
 
+.skills-grid {
+  display: flex;
+  gap: 2rem;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.skills-grid ul {
+  flex: 1;
+  min-width: 200px;
+  padding-left: 1.5rem;
+}
+
+
 h2 {
   margin-bottom: 0.5rem;
   color: #222;
@@ -181,7 +195,7 @@ footer {
 }
 
 /* Responsive */
-@media (max-width: 600px) {
+@media (max-width: 800px) {
   .about-container {
     flex-direction: column;
     align-items: center;
