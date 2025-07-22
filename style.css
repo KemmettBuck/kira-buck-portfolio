@@ -85,8 +85,8 @@ nav ul {
 }
 
 .profile-pic-side {
-  width: 200px;
-  height: 200px;
+  width: 300px;
+  height: 300px;
   border-radius: 50%;
   object-fit: cover;
   flex-shrink: 0;
