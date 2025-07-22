@@ -62,14 +62,14 @@ nav ul {
     flex-direction: column;
   }
 }
-/* About Section Image */
+/* About Section Image 
 .profile-pic {
   width: 300px;
   height: 300px;
   border-radius: 80%;
   object-fit: cover;
   margin-bottom: 1rem;
-}
+} */
 
 .about-container {
   display: flex;
