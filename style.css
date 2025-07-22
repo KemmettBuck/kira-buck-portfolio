@@ -64,9 +64,9 @@ nav ul {
 }
 /* About Section Image */
 .profile-pic {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
+  width: 300px;
+  height: 300px;
+  border-radius: 80%;
   object-fit: cover;
   margin-bottom: 1rem;
 }
@@ -90,7 +90,7 @@ nav ul {
   border-radius: 50%;
   object-fit: cover;
   flex-shrink: 0;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* soft, subtle shadow */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05); /* soft, subtle shadow */
 }
 
 /* Header Image */
