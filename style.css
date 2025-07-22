@@ -90,6 +90,7 @@ nav ul {
   border-radius: 50%;
   object-fit: cover;
   flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* soft, subtle shadow */
 }
 
 /* Header Image */
@@ -181,6 +182,16 @@ footer {
 
 /* Responsive */
 @media (max-width: 600px) {
+  .about-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .profile-pic-side {
+    margin-top: 1rem;
+  }
+}
+
   nav ul {
     flex-direction: column;
   }
@@ -192,4 +203,4 @@ footer {
   main {
     padding: 1rem;
   }
-}
+
