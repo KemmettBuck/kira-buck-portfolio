@@ -5,7 +5,12 @@ window.addEventListener("DOMContentLoaded", () => {
 
   if (greeting) {
     greeting.addEventListener('click', () => {
-      greeting.textContent = "Thanks for visiting my site!";
+      if (greeting.textContent === "Hi, I'm Kira Buck") {
+        greeting.textContent = "Thanks for visiting my site!";
+      } else {
+        greeting.textContent = "Hi, I'm Kira Buck";
+      }
+
       greeting.classList.add('fade');
     });
   }
