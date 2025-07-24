@@ -43,6 +43,9 @@ body.dark-mode main {
 
 /* Optional: Style the toggle button */
 #theme-toggle {
+  background: none;
+  font-size: 1.5rem;
+  margin-left: auto;
   position: fixed;
   top: 1rem;
   right: 1rem;
