@@ -11,7 +11,7 @@ window.addEventListener("DOMContentLoaded", () => {
         greeting.textContent = "Hi, I'm Kira Buck";
       }
 
-      greeting.classList.add('fade');
+      greeting.classList.toggle('fade');
     });
   }
 });
