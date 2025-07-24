@@ -1,3 +1,5 @@
+console.log("JS file is running!");
+
 // Select the element
 const greeting = document.getElementById('greeting');
 
