@@ -36,6 +36,12 @@ body.dark-mode {
   color: #f4f4f4;
 }
 
+/* Dark mode styling */
+body.dark-mode main {
+  background-color: #2b2b2b;
+  color: #f4f4f4;
+}
+
 /* Optional: Style the toggle button */
 #theme-toggle {
   position: fixed;
@@ -179,7 +185,9 @@ main {
   margin: 2rem auto;
   padding: 1rem;
   background-color: #fff;
+  color: #333;
   border-radius: 8px;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 section {
