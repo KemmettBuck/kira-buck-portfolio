@@ -1,10 +1,12 @@
-console.log("JS file is running!");
+window.addEventListener("DOMContentLoaded", () => {
+  console.log("JS file is running!");
 
-// Select the element
-const greeting = document.getElementById('greeting');
+  const greeting = document.getElementById('greeting');
 
-// Change text on click
-greeting.addEventListener('click', () => {
-  greeting.textContent = "Thanks for visiting my site!";
-  greeting.classList.add('fade');
+  if (greeting) {
+    greeting.addEventListener('click', () => {
+      greeting.textContent = "Thanks for visiting my site!";
+      greeting.classList.add('fade');
+    });
+  }
 });
