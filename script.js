@@ -28,16 +28,15 @@ window.addEventListener("DOMContentLoaded", () => {
     greeting.textContent = greeting.textContent === originalGreeting ? alternateGreeting : originalGreeting;
     greeting.classList.toggle('fade');
   });
-});
 
-// Contact form handler
-contactForm?.addEventListener('submit', (e) => {
-  e.preventDefault();
+  // Contact form handler
+  contactForm?.addEventListener('submit', (e) => {
+    e.preventDefault();
 
-  const name = document.getElementById('name').value || 'there';
-  const message = document.createElement('p');
+    const name = document.getElementById('name').value || 'there';
+    const message = document.createElement('p');
 
-      message.textContent = `Thanks, ${name}! I'll be in touch soon.`;
+    message.textContent = `Thanks, ${name}! I'll be in touch soon.`;
     message.style.marginTop = '1rem';
     message.style.fontWeight = 'bold';
     message.style.color = document.body.classList.contains('dark-mode') ? '#e0e0e0' : '#333';
@@ -49,6 +48,7 @@ contactForm?.addEventListener('submit', (e) => {
     contactForm.appendChild(message);
     contactForm.reset();
   });
+});
 
 // Set current year in footer
 const yearSpan = document.getElementById("year");
