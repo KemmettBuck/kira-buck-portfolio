@@ -2,22 +2,29 @@ window.addEventListener("DOMContentLoaded", () => {
   const themeToggle = document.getElementById('theme-toggle');
   const themeIcon = document.getElementById('theme-icon');
   const greeting = document.getElementById('greeting');
+  const originalGreeting = "Hi, I'm Kira Buck";
+  const alternateGreeting = "Thanks for visiting my site!";
+
   console.log("JS file is running!");
 
-  // Toggle dark mode
+  // Load saved theme
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme === 'dark') {
+    document.body.classList.add('dark-mode');
+    themeIcon.textContent = '☼';
+  }
+
+  // Theme toggle handler
   themeToggle?.addEventListener('click', () => {
     document.body.classList.toggle('dark-mode');
-    
-    const darkModeOn = document.body.classList.contains('dark-mode');
-    themeIcon.textContent = darkModeOn ? '☼' : '☽';
+    const isDark = document.body.classList.contains('dark-mode');
+    themeIcon.textContent = isDark ? '☼' : '☾';
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
   });
 
-  // Toggle greeting text and fade
+  // Greeting toggle
   greeting?.addEventListener('click', () => {
-    const originalText = "Hi, I'm Kira Buck";
-    const newText = "Thanks for visiting my site!";
-
-    greeting.textContent = greeting.textContent === originalText ? newText : originalText;
+    greeting.textContent = greeting.textContent === originalGreeting ? alternateGreeting : originalGreeting;
     greeting.classList.toggle('fade');
   });
 });
