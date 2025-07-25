@@ -22,7 +22,7 @@ body.dark-mode {
   box-sizing: border-box;
 }
 
-/* Base styles */
+/* Body styles */
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.6;
@@ -130,10 +130,10 @@ nav a:hover {
 
 @media (max-width: 600px) {
   .header-wrapper {
-    padding: 1rem;
     flex-direction: column;
     align-items: center;
     text-align: center;
+    padding: 1rem;
   }
 
   nav ul {
