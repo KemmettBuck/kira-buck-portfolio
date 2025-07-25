@@ -65,7 +65,7 @@ contactForm?.addEventListener('submit', (e) => {
 
   // Show thank you message
   const message = document.createElement('p');
-  message.textContent = `Thanks, ${name}! I’ll be in touch soon.`;
+  message.textContent = `Thanks, ${name}! I will be in touch soon.`;
   message.className = 'thank-you fade-in';
   contactForm.appendChild(message);
 
