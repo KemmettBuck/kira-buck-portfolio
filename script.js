@@ -9,7 +9,7 @@ window.addEventListener("DOMContentLoaded", () => {
     document.body.classList.toggle('dark-mode');
     
     const darkModeOn = document.body.classList.contains('dark-mode');
-    themeIcon.textContent = darkModeOn ? '☀️' : '🌙';
+    themeIcon.textContent = darkModeOn ? '☼' : '☽';
   });
 
   // Toggle greeting text and fade
