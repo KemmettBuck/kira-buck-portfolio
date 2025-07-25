@@ -52,15 +52,21 @@ window.addEventListener("DOMContentLoaded", () => {
     }
 
     // Validate email
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
     if (!email) {
       const error = document.createElement('div');
       error.textContent = "Please enter your email.";
       error.className = 'error-message';
       emailInput.after(error);
       hasError = true;
+    } else if (!emailPattern.test(email)) {
+      const error = document.createElement('div');
+      error.textContent = "Please enter a valid email address.";
+      error.className = 'error-message';
+      emailInput.after(error);
+      hasError = true;
     }
-
-    if (hasError) return;
 
     // Show animated thank-you message
     const message = document.createElement('p');
