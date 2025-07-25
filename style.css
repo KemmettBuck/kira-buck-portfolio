@@ -283,6 +283,11 @@ footer {
   color: white;
 }
 
+footer a {
+  color: #a3beda;
+  font-weight: 500;
+}
+
 .profile-pic-centered {
   width: 22rem;
   height: 22rem;
