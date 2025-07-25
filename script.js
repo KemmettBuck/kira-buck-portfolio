@@ -33,7 +33,7 @@ window.addEventListener("DOMContentLoaded", () => {
   contactForm?.addEventListener('submit', (e) => {
     e.preventDefault();
 
-    document.querySelectorAll('.error-message, .thank-you').forEach(else.remove());
+    document.querySelectorAll('.error-message, .thank-you').forEach(el => el.remove());
 
     const nameInput = document.getElementById('name');
     const emailInput = document.getElementById('email');
@@ -63,14 +63,14 @@ window.addEventListener("DOMContentLoaded", () => {
 
   // Show animated thank you message
   const message = document.createElement('p');
-  message.textContent = 'Thanks, ${name}! I will be in touch soon.';
-  message.className = 'thank you animated message';
+  message.textContent = `Thanks, ${name}! I will be in touch soon.`;
+  message.className = 'thank-you animated-message';
   contactForm.appendChild(message);
-  contactForm.requestFullscreen();
+  contactForm.reset();
 });
 
 // Set current year in footer
 const yearSpan = document.getElementById("year");
 if (yearSpan) {
   yearSpan.textContent = new Date().getFullYear();
-}
+}})
