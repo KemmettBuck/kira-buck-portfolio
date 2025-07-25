@@ -1,7 +1,18 @@
 window.addEventListener("DOMContentLoaded", () => {
+  const themeToggle = document.getElementById('theme-toggle');
+  const themeIcon = document.getElementById('theme-icon');
+  const greeting = document.getElementById('greeting');
   console.log("JS file is running!");
 
-  const greeting = document.getElementById('greeting');
+  if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+
+      // Switch icon
+      const darkModeOn = document.body.classList.contains('dark-mode');
+      themeIcon.textContent = darkModeOn? '☀️' : '🌙';
+    });
+  }
 
   if (greeting) {
     greeting.addEventListener('click', () => {
