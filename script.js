@@ -29,54 +29,50 @@ window.addEventListener("DOMContentLoaded", () => {
     greeting.classList.toggle('fade');
   });
 
-  // Contact form handler
-  contactForm?.addEventListener('submit', (e) => {
-    e.preventDefault();
+ // Contact form handler
+contactForm?.addEventListener('submit', (e) => {
+  e.preventDefault();
 
-    // Clear previous messages
-    document.querySelectorAll('.error-message, .thank-you').forEach(el => el.remove());
+  // Clear previous messages
+  document.querySelectorAll('.error-message, .thank-you').forEach(el => el.remove());
 
-    const nameInput = document.getElementById('name');
-    const emailInput = document.getElementById('email');
-    const name = nameInput.value.trim();
-    const email = emailInput.value.trim();
-    let hasError = false;
+  const nameInput = document.getElementById('name');
+  const emailInput = document.getElementById('email');
+  const name = nameInput.value.trim();
+  const email = emailInput.value.trim();
+  let hasError = false;
 
-    // Validate name
-    if (!name) {
-      const error = document.createElement('div');
-      error.textContent = "Please enter your name.";
-      error.className = 'error-message';
-      nameInput.after(error);
-      hasError = true;
-    }
+  // Validate name
+  if (!name) {
+    const error = document.createElement('div');
+    error.textContent = "Please enter your name.";
+    error.className = 'error-message';
+    nameInput.after(error);
+    hasError = true;
+  }
 
-    // Validate email
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  // Validate email format
+  const emailPattern = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
+  if (!email || !emailPattern.test(email)) {
+    const error = document.createElement('div');
+    error.textContent = "Please enter a valid email address.";
+    error.className = 'error-message';
+    emailInput.after(error);
+    hasError = true;
+  }
 
-    if (!email) {
-      const error = document.createElement('div');
-      error.textContent = "Please enter your email.";
-      error.className = 'error-message';
-      emailInput.after(error);
-      hasError = true;
-    } else if (!emailPattern.test(email)) {
-      const error = document.createElement('div');
-      error.textContent = "Please enter a valid email address.";
-      error.className = 'error-message';
-      emailInput.after(error);
-      hasError = true;
-    }
+  if (hasError) return;
 
-    if (hasError) return;
+  // Show thank you message
+  const message = document.createElement('p');
+  message.textContent = `Thanks, ${name}! I’ll be in touch soon.`;
+  message.className = 'thank-you fade-in';
+  contactForm.appendChild(message);
 
-    // Show animated thank-you message
-    const message = document.createElement('p');
-    message.textContent = `Thanks, ${name}! I will be in touch soon.`;
-    message.className = 'thank-you animated-message';
-    contactForm.appendChild(message);
-    contactForm.reset();
-  });
+  // Optional: Clear inputs
+  nameInput.value = '';
+  emailInput.value = '';
+});
 
   // Set current year in footer
   const yearSpan = document.getElementById("year");
