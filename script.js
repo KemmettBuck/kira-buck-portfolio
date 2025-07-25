@@ -1,23 +1,25 @@
 window.addEventListener("DOMContentLoaded", () => {
-  const themeToggle = document.getElementById('theme-toggle');
-  const themeIcon = document.getElementById('theme-icon');
+  const toggleBtn = document.getElementById('theme-toggle');
+  const iconSun = document.getElementById('icon-sun');
+  const iconMoon = document.getElementById('icon-moon');
   const greeting = document.getElementById('greeting');
-  console.log("JS file is running!");
 
-  // Toggle dark mode
-  themeToggle?.addEventListener('click', () => {
+  toggleBtn.addEventListener('click', () => {
     document.body.classList.toggle('dark-mode');
-    
-    const darkModeOn = document.body.classList.contains('dark-mode');
-    themeIcon.textContent = darkModeOn ? '☀️' : '🌙';
+
+    const darkMode = document.body.classList.contains('dark-mode');
+    iconSun.style.display = darkMode ? 'none' : 'inline';
+    iconMoon.style.display = darkMode ? 'inline' : 'none';
   });
 
-  // Toggle greeting text and fade
-  greeting?.addEventListener('click', () => {
-    const originalText = "Hi, I'm Kira Buck";
-    const newText = "Thanks for visiting my site!";
+  if (greeting) {
+    greeting.addEventListener('click', () => {
+      greeting.textContent =
+        greeting.textContent === "Hi, I'm Kira Buck"
+          ? "Thanks for visiting my site!"
+          : "Hi, I'm Kira Buck";
 
-    greeting.textContent = greeting.textContent === originalText ? newText : originalText;
-    greeting.classList.toggle('fade');
-  });
+      greeting.classList.toggle('fade');
+    });
+  }
 });
