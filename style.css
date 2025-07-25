@@ -12,6 +12,7 @@ body {
   background-color: #f4f4f4;
   color: #333;
   padding: 0 1rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 a {
@@ -21,13 +22,6 @@ a {
 
 a:hover {
   text-decoration: underline;
-}
-
-/* Default light mode */
-body {
-  background-color: #f4f4f4;
-  color: #333;
-  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Dark mode styles */
