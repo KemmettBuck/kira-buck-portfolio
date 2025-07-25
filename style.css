@@ -288,6 +288,11 @@ footer a {
   font-weight: 500;
 }
 
+footer a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
 .profile-pic-centered {
   width: 22rem;
   height: 22rem;
