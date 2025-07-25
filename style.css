@@ -287,6 +287,16 @@ input[type="submit"]:hover {
   background-color: #577387;
 }
 
+.thank-you {
+  transition: opacity 0.3s ease;
+  opacity: 0;
+  animation: fadeIn 0.5s forwards;
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
 /* Footer */
 footer {
   text-align: center;
