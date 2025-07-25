@@ -61,6 +61,19 @@ body.dark-mode label {
   color: #ddd;
 }
 
+body.dark-mode footer {
+  background-color: #111;
+  color: #f4f4f4;
+}
+
+body.dark-mode footer a {
+  color: #89c4ff;
+}
+
+body.dark-mode footer a:hover {
+  color: #ffffff;
+}
+
 /* Optional: Style the toggle button */
 #theme-toggle {
   background: none;
