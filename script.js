@@ -68,6 +68,8 @@ window.addEventListener("DOMContentLoaded", () => {
       hasError = true;
     }
 
+    if (hasError) return;
+
     // Show animated thank-you message
     const message = document.createElement('p');
     message.textContent = `Thanks, ${name}! I will be in touch soon.`;
