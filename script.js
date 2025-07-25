@@ -33,6 +33,7 @@ window.addEventListener("DOMContentLoaded", () => {
   contactForm?.addEventListener('submit', (e) => {
     e.preventDefault();
 
+    // Clear previous messages
     document.querySelectorAll('.error-message, .thank-you').forEach(el => el.remove());
 
     const nameInput = document.getElementById('name');
@@ -41,36 +42,37 @@ window.addEventListener("DOMContentLoaded", () => {
     const email = emailInput.value.trim();
     let hasError = false;
 
-  //Validate name
-  if (!name) {
-    const error = document.createElement('div');
-    error.textContent = "Please enter your name.";
-    error.className = 'error-message';
-    nameInput.after(error);
-    hasError = true;
+    // Validate name
+    if (!name) {
+      const error = document.createElement('div');
+      error.textContent = "Please enter your name.";
+      error.className = 'error-message';
+      nameInput.after(error);
+      hasError = true;
+    }
+
+    // Validate email
+    if (!email) {
+      const error = document.createElement('div');
+      error.textContent = "Please enter your email.";
+      error.className = 'error-message';
+      emailInput.after(error);
+      hasError = true;
+    }
+
+    if (hasError) return;
+
+    // Show animated thank-you message
+    const message = document.createElement('p');
+    message.textContent = `Thanks, ${name}! I will be in touch soon.`;
+    message.className = 'thank-you animated-message';
+    contactForm.appendChild(message);
+    contactForm.reset();
+  });
+
+  // Set current year in footer
+  const yearSpan = document.getElementById("year");
+  if (yearSpan) {
+    yearSpan.textContent = new Date().getFullYear();
   }
-
-  // Validate email
-  if (!email) {
-    const error = document.createElement('div');
-    error.textContent = "Please enter your email.";
-    error.className = 'error-message';
-    emailInput.after(error);
-    hasError = true;
-  }
-
-  if (hasError) return;
-
-  // Show animated thank you message
-  const message = document.createElement('p');
-  message.textContent = `Thanks, ${name}! I will be in touch soon.`;
-  message.className = 'thank-you animated-message';
-  contactForm.appendChild(message);
-  contactForm.reset();
 });
-
-// Set current year in footer
-const yearSpan = document.getElementById("year");
-if (yearSpan) {
-  yearSpan.textContent = new Date().getFullYear();
-}})
