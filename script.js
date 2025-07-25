@@ -1,25 +1,23 @@
 window.addEventListener("DOMContentLoaded", () => {
-  const toggleBtn = document.getElementById('theme-toggle');
-  const iconSun = document.getElementById('icon-sun');
-  const iconMoon = document.getElementById('icon-moon');
+  const themeToggle = document.getElementById('theme-toggle');
+  const themeIcon = document.getElementById('theme-icon');
   const greeting = document.getElementById('greeting');
+  console.log("JS file is running!");
 
-  toggleBtn.addEventListener('click', () => {
+  // Toggle dark mode
+  themeToggle?.addEventListener('click', () => {
     document.body.classList.toggle('dark-mode');
-
-    const darkMode = document.body.classList.contains('dark-mode');
-    iconSun.style.display = darkMode ? 'none' : 'inline';
-    iconMoon.style.display = darkMode ? 'inline' : 'none';
+    
+    const darkModeOn = document.body.classList.contains('dark-mode');
+    themeIcon.textContent = darkModeOn ? '☀️' : '🌙';
   });
 
-  if (greeting) {
-    greeting.addEventListener('click', () => {
-      greeting.textContent =
-        greeting.textContent === "Hi, I'm Kira Buck"
-          ? "Thanks for visiting my site!"
-          : "Hi, I'm Kira Buck";
+  // Toggle greeting text and fade
+  greeting?.addEventListener('click', () => {
+    const originalText = "Hi, I'm Kira Buck";
+    const newText = "Thanks for visiting my site!";
 
-      greeting.classList.toggle('fade');
-    });
-  }
+    greeting.textContent = greeting.textContent === originalText ? newText : originalText;
+    greeting.classList.toggle('fade');
+  });
 });
