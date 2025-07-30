@@ -66,6 +66,15 @@ body.dark-mode footer a:hover {
   color: #ffffff;
 }
 
+body.dark-mode .resume-btn {
+  background-color: #4a6f89;
+  color: white;
+}
+
+body.dark-mode .resume-btn:hover {
+  background-color: #6f91a8;
+}
+
 /* Optional: Style the toggle button */
 #theme-toggle {
   background: none;
