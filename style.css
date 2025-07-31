@@ -1,3 +1,8 @@
+html.dark-mode {
+  background-color: #1e1e1e;
+  color: #f4f4f4;
+}
+
 :root {
   --bg-light: #f4f4f4;
   --text-light: #333;
