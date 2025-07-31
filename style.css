@@ -216,6 +216,13 @@ nav a:hover {
     padding: 1rem;
   }
 
+  @media (prefers-color-scheme: dark) {
+    html:not(.dark-mode) {
+      background-color: #1e1e1e;
+      color: #f4f4f4;
+    }
+  }
+
   nav ul {
     flex-direction: column;
   }
