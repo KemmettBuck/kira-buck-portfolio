@@ -13,7 +13,9 @@ window.addEventListener("DOMContentLoaded", () => {
   if (savedTheme === 'dark') {
     document.body.classList.add('dark-mode');
     themeIcon.textContent = '☼';
-  }
+  } else {
+  themeIcon.textContent = '☽';
+}
 
   // Theme toggle handler
   themeToggle?.addEventListener('click', () => {
