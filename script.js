@@ -14,7 +14,7 @@ window.addEventListener("DOMContentLoaded", () => {
     document.body.classList.add('dark-mode');
     themeIcon.textContent = '☼';
   } else {
-  themeIcon.textContent = '☽';
+  themeIcon.textContent = '☾';
 }
 
   // Theme toggle handler
