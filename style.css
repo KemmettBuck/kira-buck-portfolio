@@ -1,13 +1,13 @@
 html.dark-mode {
-  background-color: #1e1e1e;
-  color: #f4f4f4;
+  background-color: #1f1b11;
+  color: #e7e5de;
 }
 
 :root {
-  --bg-light: #f4f4f4;
-  --text-light: #333;
-  --bg-dark: #1e1e1e;
-  --text-dark: #f4f4f4;
+  --bg-light: #e7e5de;
+  --text-light: #344338;
+  --bg-dark: #1f1b11;
+  --text-dark: #e7e5de;
 }
 
 /* Reset */
@@ -28,7 +28,7 @@ body {
 }
 
 a {
-  color: #2a3d4a;
+  color: #354c33;
   text-decoration: none;
 }
 
@@ -45,7 +45,7 @@ a:hover {
 
 .project-card {
   background-color: #fff;
-  color: #333;
+  color: #344338;
   padding: 1.5rem;
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
@@ -54,7 +54,7 @@ a:hover {
 
 body.dark-mode .project-card {
   background-color: #2b2b2b;
-  color: #f4f4f4;
+  color: #e7e5de;
 }
 
 .project-card:hover {
@@ -73,19 +73,19 @@ body.dark-mode .project-card a {
 
 /* Dark mode styles */
 body.dark-mode {
-  background-color: #1e1e1e;
-  color: #f4f4f4;
+  background-color: #332c19;
+  color: #e7e5de;
   background-color: var(--bg-dark);
   color: var(--text-dark);
 }
 
 body.dark-mode main {
   background-color: #2b2b2b;
-  color: #f4f4f4;
+  color: #e7e5de;
 }
 
 body.dark-mode h2 {
-  color: #f4f4f4;
+  color: #e7e5de;
   text-shadow: 0 0 5px rgba(255, 255, 255, 0.1);
 }
 
@@ -95,7 +95,7 @@ body.dark-mode label {
 
 body.dark-mode footer {
   background-color: #111;
-  color: #f4f4f4;
+  color: #e7e5de;
 }
 
 body.dark-mode footer a {
@@ -223,8 +223,8 @@ nav a:hover {
 
   @media (prefers-color-scheme: dark) {
     html:not(.dark-mode) {
-      background-color: #1e1e1e;
-      color: #f4f4f4;
+      background-color: #332c19;
+      color: #e7e5de;
     }
   }
 
