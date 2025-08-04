@@ -109,7 +109,7 @@ html.dark-mode .resume-btn {
   color: white;
 }
 
-html.dark-mode .resume-btn:hover {
+body.dark-mode .resume-btn:hover {
   background-color: #6f91a8;
 }
 
