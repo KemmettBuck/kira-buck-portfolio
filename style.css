@@ -1,6 +1,6 @@
 html.dark-mode {
   background-color: #1e1e1e;
-  color: #f4f4f4;
+  color: #4f4d4d;
 }
 
 :root {
@@ -104,12 +104,12 @@ html.dark-mode footer a:hover {
   color: #ffffff;
 }
 
-body.dark-mode .resume-btn {
+html.dark-mode .resume-btn {
   background-color: #4a6f89;
   color: white;
 }
 
-body.dark-mode .resume-btn:hover {
+html.dark-mode .resume-btn:hover {
   background-color: #6f91a8;
 }
 
