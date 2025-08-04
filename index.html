@@ -1,22 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<head>
   <script>
-  (function () {
-    try {
-      const theme = localStorage.getItem('theme');
-      if (theme === 'dark') {
-        document.documentElement.classList.add('dark-mode');
-        document.addEventListener("DOMContentLoaded", () => {
-          const icon = document.getElementById("theme-icon");
-          if (icon) icon.textContent = "☼";
-        });
+    // Hide page until theme is applied to avoid flash
+    document.documentElement.style.visibility = 'hidden';
+    (function () {
+      try {
+        const theme = localStorage.getItem('theme');
+        if (theme === 'dark') {
+          document.documentElement.classList.add('dark-mode');
+        }
+      } catch (e) {
+        console.warn('Theme preference load failed:', e);
+      } finally {
+        document.documentElement.style.visibility = 'visible';
       }
-    } catch (e) {
-      console.warn('Theme preference load failed:', e);
-    }
-  })();
-</script>
+    })();
+  </script>
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta name="description" content="Portfolio site for Kira Buck, aspiring frontend developer focused on clean design and user experience.">
