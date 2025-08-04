@@ -16,28 +16,34 @@
     }
   </style>
 
-  <script>
-    (function () {
-      try {
-        const theme = localStorage.getItem('theme');
-        if (theme === 'dark') {
-          document.documentElement.classList.add('dark-mode');
-        }
-
-        // Preload theme icon BEFORE DOMContentLoaded
-        const iconHTML = (theme === 'dark') ? '☼' : '☽';
-        document.addEventListener("DOMContentLoaded", () => {
-          const icon = document.getElementById("theme-icon");
-          if (icon) icon.textContent = iconHTML;
-        });
-      } catch (e) {
-        console.warn("Theme setup error:", e);
-      } finally {
-        // Always make page visible ASAP
-        document.documentElement.style.visibility = 'visible';
+<script>
+  (function () {
+    try {
+      const theme = localStorage.getItem('theme');
+      if (theme === 'dark') {
+        document.documentElement.classList.add('dark-mode');
       }
-    })();
-  </script>
+
+      const iconHTML = theme === 'dark' ? '☼' : '☽';
+
+      // Update icon ASAP
+      const updateIcon = () => {
+        const icon = document.getElementById("theme-icon");
+        if (icon) icon.textContent = iconHTML;
+      };
+
+      if (document.readyState === 'loading') {
+        document.addEventListener("DOMContentLoaded", updateIcon);
+      } else {
+        updateIcon();
+      }
+    } catch (e) {
+      console.warn("Theme setup error:", e);
+    } finally {
+      document.documentElement.style.visibility = 'visible';
+    }
+  })();
+</script>
 
   <link rel="stylesheet" href="style.css" />
 </head>
