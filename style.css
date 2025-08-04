@@ -52,7 +52,7 @@ a:hover {
   transition: transform 0.3s ease;
 }
 
-body.dark-mode .project-card {
+html.dark-mode .project-card {
   background-color: #2b2b2b;
   color: #f4f4f4;
 }
@@ -67,49 +67,49 @@ body.dark-mode .project-card {
   color: #2f4d63;
 }
 
-body.dark-mode .project-card a {
+html.dark-mode .project-card a {
   color: #89c4ff;
 }
 
 /* Dark mode styles */
-body.dark-mode {
+html.dark-mode {
   background-color: #1e1e1e;
   color: #f4f4f4;
 }
 
-body.dark-mode main {
+html.dark-mode main {
   background-color: #2b2b2b;
   color: #f4f4f4;
 }
 
-body.dark-mode h2 {
+html.dark-mode h2 {
   color: #f4f4f4;
   text-shadow: 0 0 5px rgba(255, 255, 255, 0.1);
 }
 
-body.dark-mode label {
+html.dark-mode label {
   color: #ddd;
 }
 
-body.dark-mode footer {
+html.dark-mode footer {
   background-color: #111;
   color: #f4f4f4;
 }
 
-body.dark-mode footer a {
+html.dark-mode footer a {
   color: #89c4ff;
 }
 
-body.dark-mode footer a:hover {
+html.dark-mode footer a:hover {
   color: #ffffff;
 }
 
-body.dark-mode .resume-btn {
+html.dark-mode .resume-btn {
   background-color: #4a6f89;
   color: white;
 }
 
-body.dark-mode .resume-btn:hover {
+html.dark-mode .resume-btn:hover {
   background-color: #6f91a8;
 }
 
