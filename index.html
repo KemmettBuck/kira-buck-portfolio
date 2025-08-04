@@ -1,44 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Portfolio site for Kira Buck, aspiring frontend developer focused on clean design and user experience.">
+  <title>Kira Buck - Frontend Developer</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+
+  <!-- Prevent theme/icon flash -->
+  <style>
+    html { visibility: hidden; }
+    html.dark-mode {
+      background-color: #1e1e1e;
+      color: #f4f4f4;
+    }
+  </style>
+
   <script>
-    // Hide page until theme and icon are set to prevent flash
-    document.documentElement.style.visibility = 'hidden';
     (function () {
       try {
         const theme = localStorage.getItem('theme');
-        const iconHTML = (theme === 'dark') ? '☼' : '☽';
         if (theme === 'dark') {
           document.documentElement.classList.add('dark-mode');
         }
 
-        // Inject theme icon early so it doesn't flash wrong symbol
-        window.addEventListener('DOMContentLoaded', function () {
+        const iconHTML = theme === 'dark' ? '☼' : '☽';
+
+        const updateIcon = () => {
           const icon = document.getElementById("theme-icon");
           if (icon) icon.textContent = iconHTML;
-        });
+        };
+
+        if (document.readyState === 'loading') {
+          document.addEventListener("DOMContentLoaded", updateIcon);
+        } else {
+          updateIcon();
+        }
       } catch (e) {
-        console.warn('Theme load failed:', e);
+        console.warn("Theme load error:", e);
       } finally {
         document.documentElement.style.visibility = 'visible';
       }
     })();
   </script>
 
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Portfolio site for Kira Buck, aspiring frontend developer focused on clean design and user experience.">
-  <title>Kira Buck - Frontend Developer</title>
-  <link rel="icon" href="favicon.ico" type="image/x-icon" />
   <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
   <header>
   <div class="header-wrapper">
     <button id="theme-toggle" aria-label="Toggle light/dark mode">
-      <span id="theme-icon">☾</span>
+      <span id="theme-icon"></span>
     </button>
     <nav>
       <ul>
