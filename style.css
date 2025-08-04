@@ -339,6 +339,7 @@ input[type="email"]:focus {
   outline: none;
   box-shadow: 0 0 4px rgba(138, 114, 101, 0.6);
   border: 1px solid #ccc;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 input[type="submit"] {
