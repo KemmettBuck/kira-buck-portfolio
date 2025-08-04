@@ -104,7 +104,7 @@ html.dark-mode footer a:hover {
   color: #ffffff;
 }
 
-html.dark-mode .resume-btn {
+body.dark-mode .resume-btn {
   background-color: #4a6f89;
   color: white;
 }
