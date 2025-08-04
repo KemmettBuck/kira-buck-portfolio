@@ -414,6 +414,7 @@ footer a:hover {
   font-size: 0.9rem;
   margin-top: 0.25rem;
   margin-bottom: 0.5rem;
+  animation: fadeIn 0.5s ease forwards;
 }
 
 .fade-in {
