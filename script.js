@@ -79,6 +79,21 @@ window.addEventListener("DOMContentLoaded", () => {
     emailInput.value = '';
   });
 
+  // Scroll to top button
+  const scrollTopBtn = document.getElementById("scroll-top-btn");
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 300) {
+    scrollTopBtn?.classList.add("show");
+  } else {
+    scrollTopBtn?.classList.remove("show");
+  }
+});
+
+scrollTopBtn?.addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});
+
   // Set footer year
   if (yearSpan) {
     yearSpan.textContent = new Date().getFullYear();
