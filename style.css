@@ -39,6 +39,26 @@ html.dark-mode {
   color: var(--text-dark);
 }
 
+#scroll-top-btn {
+  position: fixed;
+  bottom: 2rem;
+  right: 1rem;
+  padding: 0.6rem 1rem;
+  font-size: 1.2rem;
+  background-color: #4a6f89;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: none;
+  z-index: 999;
+  transition: opacity 0.3s ease;
+}
+
+#scroll-top-btn.show {
+  display: block;
+}
+
 /* Body */
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
