@@ -10,48 +10,52 @@ window.addEventListener("DOMContentLoaded", () => {
 
   console.log("JS file is running!");
 
-  // Apply saved theme to <html>
+  // Detect and apply saved or preferred theme
   const savedTheme = localStorage.getItem('theme');
   const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-  const isDarkPreferred = savedTheme === 'dark' || (!savedTheme && prefersDark);
+  const isDark = savedTheme === 'dark' || (!savedTheme && prefersDark);
 
-  if (isDarkPreferred) {
-    document.documentElement.classList.add('dark-mode');
-    if (themeIcon) themeIcon.textContent = '☼';
-  } else {
-    if (themeIcon) themeIcon.textContent = '☽';
+  const html = document.documentElement;
+  html.classList.toggle('dark-mode', isDark);
+
+  if (themeIcon) {
+    themeIcon.textContent = isDark ? '☼' : '☽';
   }
 
-  // Theme toggle button
+  // Toggle theme
   themeToggle?.addEventListener('click', () => {
-    document.documentElement.classList.toggle('dark-mode');
-    const isDark = document.documentElement.classList.contains('dark-mode');
-    themeIcon.textContent = isDark ? '☼' : '☽';
-    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    html.classList.toggle('dark-mode');
+    const nowDark = html.classList.contains('dark-mode');
+    localStorage.setItem('theme', nowDark ? 'dark' : 'light');
+    if (themeIcon) {
+      themeIcon.textContent = nowDark ? '☼' : '☽';
+    }
   });
 
-  // Greeting toggle on click
+  // Greeting toggle
   greeting?.addEventListener('click', () => {
-    greeting.textContent = greeting.textContent === originalGreeting ? alternateGreeting : originalGreeting;
+    greeting.textContent = greeting.textContent === originalGreeting
+      ? alternateGreeting
+      : originalGreeting;
     greeting.classList.toggle('fade');
   });
 
-  // Contact form validation and thank-you message
+  // Contact form handling
   contactForm?.addEventListener('submit', (e) => {
     e.preventDefault();
     document.querySelectorAll('.error-message, .thank-you').forEach(el => el.remove());
 
     const nameInput = document.getElementById('name');
     const emailInput = document.getElementById('email');
-    const name = nameInput.value.trim();
-    const email = emailInput.value.trim();
+    const name = nameInput?.value.trim();
+    const email = emailInput?.value.trim();
     let hasError = false;
 
     if (!name) {
       const error = document.createElement('div');
       error.textContent = "Please enter your name.";
       error.className = 'error-message';
-      nameInput.after(error);
+      nameInput?.after(error);
       hasError = true;
     }
 
@@ -60,7 +64,7 @@ window.addEventListener("DOMContentLoaded", () => {
       const error = document.createElement('div');
       error.textContent = "Please enter a valid email address.";
       error.className = 'error-message';
-      emailInput.after(error);
+      emailInput?.after(error);
       hasError = true;
     }
 
@@ -75,7 +79,7 @@ window.addEventListener("DOMContentLoaded", () => {
     emailInput.value = '';
   });
 
-  // Update footer year
+  // Set footer year
   if (yearSpan) {
     yearSpan.textContent = new Date().getFullYear();
   }
