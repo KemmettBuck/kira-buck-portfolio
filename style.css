@@ -1,6 +1,6 @@
 html.dark-mode {
   background-color: #1e1e1e;
-  color: #4f4d4d;
+  color: #3a393d;
 }
 
 :root {
@@ -44,7 +44,7 @@ a:hover {
 }
 
 .project-card {
-  background-color: #fff;
+  background-color: #3a393d;
   color: #333;
   padding: 1.5rem;
   border-radius: 8px;
