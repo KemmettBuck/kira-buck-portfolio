@@ -98,6 +98,21 @@ header h1 {
   padding: 0 1rem;
 }
 
+/* Skills grid */
+.skills-grid {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.skills-grid ul {
+  flex: 1 1 45%;
+  min-width: 200px;
+  padding-left: 1.5rem;
+  list-style: disc;
+}
+
 /* Navigation */
 nav ul {
   list-style: none;
