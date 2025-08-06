@@ -365,12 +365,15 @@ html.dark-mode footer {
 }
 
 /* Responsive */
-@media (max-width: 800px) {
+@media (max-width: 600px) {
   .header-wrapper {
     flex-direction: column;
     align-items: center;
     text-align: center;
     padding: 1rem;
+  }
+  .skills-grid {
+    flex-direction: column;
   }
 
   nav ul {
