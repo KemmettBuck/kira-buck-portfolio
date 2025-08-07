@@ -404,4 +404,10 @@ html.dark-mode footer {
     flex-direction: column;
     align-items: center;
   }
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}
 }
