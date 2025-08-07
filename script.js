@@ -4,11 +4,24 @@ window.addEventListener("DOMContentLoaded", () => {
   const greeting = document.getElementById('greeting');
   const contactForm = document.getElementById('contact-form');
   const yearSpan = document.getElementById('year');
-
   const originalGreeting = "Hi, I'm Kira Buck";
   const alternateGreeting = "Thanks for visiting my site!";
 
   console.log("JS file is running!");
+
+  // Animate project cards on scroll
+const cards = document.querySelectorAll('.project-card');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.2 });
+
+cards.forEach(card => observer.observe(card));
+
 
   // Detect and apply saved or preferred theme
   const savedTheme = localStorage.getItem('theme');
