@@ -4,6 +4,43 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Blog Title Here</title>
+    <!-- Hide body early to prevent flash -->
+  <style>
+    html { visibility: hidden; }
+    html.dark-mode {
+      background-color: #1e1e1e;
+      color: #3a393d;
+    }
+  </style>
+
+<script>
+  (function () {
+    try {
+      const theme = localStorage.getItem('theme');
+      if (theme === 'dark') {
+        document.documentElement.classList.add('dark-mode');
+      }
+
+      const iconHTML = theme === 'dark' ? '☼' : '☽';
+
+      // Update icon ASAP
+      const updateIcon = () => {
+        const icon = document.getElementById("theme-icon");
+        if (icon) icon.textContent = iconHTML;
+      };
+
+      if (document.readyState === 'loading') {
+        document.addEventListener("DOMContentLoaded", updateIcon);
+      } else {
+        updateIcon();
+      }
+    } catch (e) {
+      console.warn("Theme setup error:", e);
+    } finally {
+      document.documentElement.style.visibility = 'visible';
+    }
+  })();
+</script>
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" href="favicon.ico" />
 </head>
