@@ -11,6 +11,69 @@ window.addEventListener("DOMContentLoaded", () => {
   document.getElementById("thank-you-modal")?.classList.add("hidden");
 });
 
+const modal = document.getElementById("thank-you-modal");
+let lastFocusedElementBeforeModal = null;
+
+// Focus trap setup
+const focusableSelectors = 'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])';
+
+function openModal() {
+  lastFocusedElementBeforeModal = document.activeElement;
+  modal.classList.remove("hidden");
+  const focusableEls = modal.querySelectorAll(focusableSelectors);
+  const firstEl = focusableEls[0];
+  firstEl?.focus();
+
+  // Trap focus
+  modal.addEventListener("keydown", trapTabKey);
+  document.addEventListener("keydown", handleEscapeKey);
+
+  // Prevent background scroll
+  document.body.style.overflow = "hidden";
+}
+
+function closeModal() {
+  modal.classList.add("hidden");
+  lastFocusedElementBeforeModal?.focus();
+
+  modal.removeEventListener("keydown", trapTabKey);
+  document.removeEventListener("keydown", handleEscapeKey);
+
+  // Restore background scroll
+  document.body.style.overflow = "";
+}
+
+function trapTabKey(e) {
+  if (e.key !== "Tab") return;
+
+  const focusableEls = modal.querySelectorAll(focusableSelectors);
+  const firstEl = focusableEls[0];
+  const lastEl = focusableEls[focusableEls.length - 1];
+
+  if (e.shiftKey) {
+    // Shift + Tab
+    if (document.activeElement === firstEl) {
+      e.preventDefault();
+      lastEl.focus();
+    }
+  } else {
+    // Tab
+    if (document.activeElement === lastEl) {
+      e.preventDefault();
+      firstEl.focus();
+    }
+  }
+}
+
+function handleEscapeKey(e) {
+  if (e.key === "Escape") {
+    closeModal();
+  }
+}
+
+closeModalBtn?.addEventListener("click", closeModal);
+
+
   console.log("JS file is running!");
 
 
