@@ -6,6 +6,10 @@ window.addEventListener("DOMContentLoaded", () => {
   const yearSpan = document.getElementById('year');
   const originalGreeting = "Hi, I'm Kira Buck";
   const alternateGreeting = "Thanks for visiting my site!";
+  const closeModalBtn = document.getElementById("close-modal-btn");
+  closeModalBtn?.addEventListener("click", () => {
+  document.getElementById("thank-you-modal")?.classList.add("hidden");
+});
 
   console.log("JS file is running!");
 
@@ -92,10 +96,11 @@ cards.forEach(card => observer.observe(card));
 
     if (hasError) return;
 
-    const message = document.createElement('p');
-    message.textContent = `Thanks, ${name}! I will be in touch soon.`;
-    message.className = 'thank-you fade-in';
-    contactForm.appendChild(message);
+    const modal = document.getElementById("thank-you-modal");
+    if (modal) {
+      modal.classList.remove("hidden");
+    }
+
 
     nameInput.value = '';
     emailInput.value = '';
