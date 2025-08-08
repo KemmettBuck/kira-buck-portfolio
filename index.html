@@ -117,10 +117,18 @@
 
         <input type="submit" value="Send" />
       </form>
-      <div id="thank-you-modal" class="modal hidden">
+      <div 
+  id="thank-you-modal" 
+  class="modal hidden" 
+  role="dialog" 
+  aria-modal="true" 
+  aria-labelledby="thank-you-heading"
+  tabindex="-1"
+>
   <div class="modal-content">
+    <h2 id="thank-you-heading">Thank You</h2>
     <p>Thanks for reaching out! I'll be in touch soon.</p>
-    <button id="close-modal-btn">Close</button>
+    <button id="close-modal-btn" aria-label="Close modal">Close</button>
   </div>
 </div>
 
