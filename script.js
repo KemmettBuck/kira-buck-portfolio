@@ -7,7 +7,6 @@ window.addEventListener("DOMContentLoaded", () => {
   const originalGreeting = "Hi, I'm Kira Buck";
   const alternateGreeting = "Thanks for visiting my site!";
   const closeModalBtn = document.getElementById("close-modal-btn");
-  const modal = document.getElementById("thank-you-modal");
   let lastFocusedElementBeforeModal = null;
 
 // Focus trap setup
