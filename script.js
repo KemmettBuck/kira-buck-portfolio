@@ -32,6 +32,15 @@ window.addEventListener("DOMContentLoaded", () => {
     }
   });
 
+    // Theme toggle for menu
+    const menuToggle = document.getElementById('mobile-menu-toggle');
+    const mainNav = document.getElementById('main-nav');
+
+    menuToggle?.addEventListener('click', () => {
+      mainNav?.classList.toggle('show');
+});
+
+
     // Animate project cards on scroll
 const cards = document.querySelectorAll('.project-card');
 const observer = new IntersectionObserver((entries) => {
