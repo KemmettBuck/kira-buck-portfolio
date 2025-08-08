@@ -154,7 +154,6 @@ cards.forEach(card => observer.observe(card));
 
     if (hasError) return;
 
-    const modal = document.getElementById("thank-you-modal");
     if (modal) {
       openModal();
     }
