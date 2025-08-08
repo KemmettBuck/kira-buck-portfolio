@@ -6,6 +6,7 @@ window.addEventListener("DOMContentLoaded", () => {
   const yearSpan = document.getElementById('year');
   const originalGreeting = "Hi, I'm Kira Buck";
   const alternateGreeting = "Thanks for visiting my site!";
+  const modal = document.getElementById("thank-you-modal");
   const closeModalBtn = document.getElementById("close-modal-btn");
   let lastFocusedElementBeforeModal = null;
 
