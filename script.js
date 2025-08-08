@@ -161,7 +161,7 @@ cards.forEach(card => observer.observe(card));
 
     const modal = document.getElementById("thank-you-modal");
     if (modal) {
-      modal.classList.remove("hidden");
+      openModal();
     }
 
 
