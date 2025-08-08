@@ -7,12 +7,8 @@ window.addEventListener("DOMContentLoaded", () => {
   const originalGreeting = "Hi, I'm Kira Buck";
   const alternateGreeting = "Thanks for visiting my site!";
   const closeModalBtn = document.getElementById("close-modal-btn");
-  closeModalBtn?.addEventListener("click", () => {
-  document.getElementById("thank-you-modal")?.classList.add("hidden");
-});
-
-const modal = document.getElementById("thank-you-modal");
-let lastFocusedElementBeforeModal = null;
+  const modal = document.getElementById("thank-you-modal");
+  let lastFocusedElementBeforeModal = null;
 
 // Focus trap setup
 const focusableSelectors = 'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])';
