@@ -201,6 +201,14 @@ html.dark-mode .project-card {
   color: var(--text-dark);
 }
 
+html.dark-mode .home-btn {
+  background-color: var(--accent-color-dark);
+  color: var(--text-dark);
+}
+html.dark-mode .home-btn:hover {
+  background-color: var(--accent-hover-dark);
+}
+
 .blog-grid {
   display: grid;
   gap: 2rem;
